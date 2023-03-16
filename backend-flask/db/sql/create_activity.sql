@@ -1,4 +1,4 @@
-INSERT INTO public.activities(
+INSERT INTO public.activities (
     user_uuid,
     message,
     expires_at
