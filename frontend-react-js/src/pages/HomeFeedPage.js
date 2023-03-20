@@ -17,9 +17,8 @@ export default function HomeFeedPage() {
   const [popped, setPopped] = React.useState(false);
   const [poppedReply, setPoppedReply] = React.useState(false);
   const [replyActivity, setReplyActivity] = React.useState({});
-  const [user, setUser] = React.useState(null);// set a state
+  const [user, setUser] = React.useState(null);
   const dataFetchedRef = React.useRef(false);
-
 
   const loadData = async () => {
     try {
@@ -41,7 +40,6 @@ export default function HomeFeedPage() {
     }
   };
 
-  // check if we are authenicated
   const checkAuth = async () => {
     Auth.currentAuthenticatedUser({
       // Optional, By default is false. 
@@ -74,7 +72,8 @@ export default function HomeFeedPage() {
     <article>
       <DesktopNavigation user={user} active={'home'} setPopped={setPopped} />
       <div className='content'>
-        <ActivityForm  
+        <ActivityForm
+          user_handle={user}
           popped={popped}
           setPopped={setPopped} 
           setActivities={setActivities} 
