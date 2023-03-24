@@ -11,8 +11,12 @@ tasks:
       cd $THEIA_WORKSPACE_ROOT
   - name: react-js
     command: |
-      cd fronted-react-js
+      cd frontend-react-js
       npm i
+  - name: flask
+    command: |
+      cd backend-flask
+      pip install -r requirement.txt
 
   - name: postgres
     init: |
